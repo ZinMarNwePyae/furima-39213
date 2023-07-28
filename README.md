@@ -19,7 +19,7 @@
 - has_many :orders
 - has_many :comments
 
-## item テーブル
+## items テーブル
 
 | Column                    | Type      | Options                       |
 | ------------------        | ------    | -----------                   |
@@ -29,7 +29,7 @@
 | category_id               | integer   | null: false                   |
 | product_status_id         | integer   | null: false                   |
 | shipping_fee_id           | integer   | null: false                   |
-| shipping_region_id        | integer   | null: false                   |
+| prefecture_id             | integer   | null: false                   |
 | shipping_duriation_id     | integer   | null: false                   |
 | price                     | integer   | null: false                   |
 
@@ -40,7 +40,7 @@
 - has_one   :order
 - has_many  :comments
 
-## order テーブル
+## orders テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -53,7 +53,7 @@
 - belongs_to :item
 - has_one    :payment
 
-## payment テーブル
+## payments テーブル
 
 | Column        | Type       | Options                        |
 | -------       | ---------- | ------------------------------ |
@@ -69,7 +69,7 @@
 
 - belongs_to :order
 
-## comment テーブル
+## comments テーブル
 
 | Column        | Type       | Options                        |
 | -------       | ---------- | ------------------------------ |
