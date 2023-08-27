@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :category do
+  factory :shipping_duriation do
     
   end
 end
