@@ -22,6 +22,16 @@ class Item < ApplicationRecord
         validates :prefecture_id
         validates :shipping_duriation_id
         validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
-    
+
     end
+
+    with_options presence: true, numericality: { greater_than: 0 },exclusion: { in: ["---"] } do
+        validates :category_id
+        validates :product_status_id
+        validates :shipping_fee_id
+        validates :prefecture_id
+        validates :shipping_duriation_id
+      end
+    
+    
 end
