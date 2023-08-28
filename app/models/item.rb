@@ -7,23 +7,23 @@ class Item < ApplicationRecord
     belongs_to :product_status
     belongs_to :shipping_fee
     belongs_to :prefecture
-    belongs_to :shipping_duriation
+    belongs_to :shipping_duration
 
     has_one_attached :image
 
-        validates :user_id
-        validates :image
-        validates :name
-        validates :description
-        validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
-
-    with_options presence: true, numericality: { greater_than: 0 },exclusion: { in: ["---"] } do
+    with_options presence: true, numericality: { greater_than: 0 }, exclusion: { in: ["---"] } do
         validates :category_id
         validates :product_status_id
         validates :shipping_fee_id
         validates :prefecture_id
-        validates :shipping_duriation_id
-      end
-    
+        validates :shipping_duration_id
+    end
+
+        validates :image, presence: true
+        validates :name, presence: true
+        validates :description, presence: true
+        validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+
+
     
 end
