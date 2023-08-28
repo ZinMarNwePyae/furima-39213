@@ -15,7 +15,7 @@ class Item < ApplicationRecord
         validates :image
         validates :name
         validates :description
-        validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+        validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
 
     with_options presence: true, numericality: { greater_than: 0 },exclusion: { in: ["---"] } do
         validates :category_id
