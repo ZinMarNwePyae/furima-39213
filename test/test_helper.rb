@@ -8,6 +8,15 @@ class ActiveSupport::TestCase
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
+  setup do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  teardown do
+    DatabaseCleaner.clean
+  end
+
 
   # Add more helper methods to be used by all tests here...
 end
