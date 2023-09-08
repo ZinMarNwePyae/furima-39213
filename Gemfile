@@ -67,3 +67,5 @@ gem 'pry-rails'
 gem 'active_hash'
 gem 'database_cleaner'
 gem 'gon'
+gem 'payjp'
+gem "aws-sdk-s3", require: false
