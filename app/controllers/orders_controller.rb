@@ -31,9 +31,12 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order_form).permit(:postcode, :prefecture_id, :city, :block, :building, :phone_number).merge(
-      user_id: current_user.id, item_id: params[:item_id]
+      user_id: current_user.id, 
+      item_id: params[:item_id], 
+      token: params[:order_form][:token] # token情報をマージ
     )
   end
+  
 
   def pay_item
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
