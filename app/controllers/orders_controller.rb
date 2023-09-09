@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
     params.require(:order_form).permit(:postcode, :prefecture_id, :city, :block, :building, :phone_number).merge(
       user_id: current_user.id, 
       item_id: params[:item_id], 
-      token: params[:order_form][:token] # token情報をマージ
+      token: params[:token] # token情報をマージ
     )
   end
   
