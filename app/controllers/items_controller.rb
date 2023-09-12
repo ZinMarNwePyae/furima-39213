@@ -22,9 +22,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    return unless current_user.id == @item.user.id
-
-    redirect_to @item.order ? { action: :index } : root_path
+    if @item.user_id == current_user.id && @item.order.nil?
+    else
+    redirect_to  root_path
+    end
   end
 
   def update
