@@ -29,4 +29,4 @@ const setupPayment = () => {
   });
 };
 
-window.addEventListener("turbo:load", setupPayment);
+window.addEventListener("load", setupPayment);
